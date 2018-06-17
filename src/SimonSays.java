@@ -22,7 +22,7 @@ public class SimonSays extends KeyAdapter {
  
  // Complete steps 1 - 7 before you test
  // 1. Make a JFrame variable 
- 
+ JFrame frame = new JFrame();
  	HashMap<Integer,String> images = new HashMap<Integer, String>();
  	private int imageIndex;
  	private int tries = 0;
@@ -32,9 +32,9 @@ public class SimonSays extends KeyAdapter {
  // 2. add 4 images which match keyboard keys like this: images.put(new Integer(KeyEvent.VK_UP), "image.jpg");
   	
  // 3. Tell the user to "Press the matching key when 'Simon says' otherwise press a different key"
- 
+ JOptionPane.showMessageDialog(null, "Press the matching key when 'Simon says' otherwise press a different key");
  // 4. call the method to show an image
-
+showImage();
  	}
 	public void keyPressed(KeyEvent e) {
     	int keyCode = e.getKeyCode();
@@ -55,13 +55,17 @@ public class SimonSays extends KeyAdapter {
 	}
 	private void showImage() {
     	//5. initialize your frame to a new JFrame()
-	 
+	 frame = this.frame;
     	//6. set the frame to visible
-	
+	frame.setVisible(true);
   	 //frame.add(getNextRandomImage()); //7. rename to the name of your frame
-    	
+    	frame.add(frame, "A.png");
+    	frame.add(frame, "D.png");
+    	frame.add(frame, "F.png");
+    	frame.add(frame, "S.png");
+
     	// 8. set the size of the frame 
-     	
+     	frame.setSize(100, 100);
     	// 9. add a key listener to the frame
 	
    	 //10. Use the speak method to either say "Simon says press this key" or "Press this key"

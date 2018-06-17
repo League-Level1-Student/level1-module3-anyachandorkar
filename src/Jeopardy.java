@@ -57,7 +57,7 @@ frame.setVisible(true);
 frame.add(quizPanel);
 		
 		// 6. Use the createButton method to set the value of firstButton 
-	firstButton = createButton("$500");
+	firstButton = createButton("$200");
 	// 7. Add the firstButton to the quizPanel
 		quizPanel.add(firstButton);
 		// 8. Write the code inside the createButton() method below. Check that your game looks like Figure 1 in the Jeopardy Handout - http://bit.ly/1bvnvd4.
@@ -69,6 +69,12 @@ frame.add(quizPanel);
 		// 11. Add action listeners to the buttons (2 lines of code)
 	firstButton.addActionListener(this);
 secondButton.addActionListener(this);
+thirdButton = createButton("$400");
+fourthButton = createButton("$500");
+quizPanel.add(thirdButton);
+quizPanel.add(fourthButton);
+thirdButton.addActionListener(this);
+fourthButton.addActionListener(this);
 		// 12. Fill in the actionPerformed() method below
 				
 		frame.pack();
@@ -85,7 +91,7 @@ secondButton.addActionListener(this);
 	 *
 	 * [optional] Use the showImage or playSound methods when the user answers a question 
 	 */
-	
+
 	private JButton createButton(String dollarAmount) {
 		// Create a new JButton
 		JButton asdf = new JButton();
@@ -107,7 +113,7 @@ secondButton.addActionListener(this);
 		JButton buttonPressed = (JButton) arg0.getSource();
 		// If the buttonPressed was the firstButton
 		if(buttonPressed.equals(firstButton)) {
-			askQuestion("Who was the quarterback of the winning team of the 2018 superbowl", "Nick Foles", 500);
+			askQuestion("What is the name of New England's football team?", "New England Patriots", 200);
 	
 		}
 			// Call the askQuestion() method
@@ -115,15 +121,22 @@ secondButton.addActionListener(this);
 			// Fill in the askQuestion() method. When you play the game, the score should change.
 		
 		// Or if the buttonPressed was the secondButton
-
+playJeopardyTheme();
 if(buttonPressed.equals(secondButton)) {
+	askQuestion("Who scored a hattrick in the Portugal vs Spain game of World Cup Series in 2018?", "Cristiano Ronaldo", 300);
 	
 }
 			// Call the askQuestion() method with a harder question
 			
-		
+		playJeopardyTheme();
+		if(buttonPressed.equals(thirdButton)) {
+			askQuestion("Who was the quarterback of the winning team of the 2018 superbowl", "Nick Foles", 400);
+		}
 		// Clear the button text (set the button text to nothing)
-		
+		playJeopardyTheme();
+		if(buttonPressed.equals(fourthButton)) {
+			askQuestion("What is the correct term for when a football quarterback throws the ball where no player is remotely close to?", "Intentional grounding", 400);
+		}
 	}
 
 	private void askQuestion(String question, String correctAnswer, int prizeMoney) {
