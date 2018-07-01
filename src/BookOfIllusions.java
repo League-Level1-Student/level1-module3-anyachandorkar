@@ -18,6 +18,8 @@ import javax.swing.JOptionPane;
 
 public class BookOfIllusions extends MouseAdapter {
 
+	String illusion1 = "illusion1.jpg";
+	String illusion2 = "illusion2.jpg";
 	/*
 	 * Here we are instantiating our BookOfIllusions class and calling it’s createBook() method. This is because we want to get out of the
 	 * static main method, so that we can add a click listener to each illusion.
@@ -39,8 +41,7 @@ JLabel label;
 		// 4. find 2 images and save them to your project’s default package
 		
 		// 5. make a variable to hold the location of your image. e.g. "illusion.jpg"
-		String illusion1 = "illusion1.jpg";
-		String illusion2 = "illusion2.jpg";
+		
 		// 6. create a variable of type "JLabel" but don’t initialize it yet
 		
 		// 7. use the "loadImage..." methods below to initialize your JLabel
@@ -60,8 +61,9 @@ JLabel label;
 	frame.removeMouseListener(this);
 	frame.remove(label);
 		// 13. load a new image like before (this is more than one line of code)
-	String illusion3= "illusion3.jpg";
-	label=loadImageFromComputer(illusion3);
+
+	label=loadImageFromComputer(illusion2);
+	frame.add(label);
 		// 14. pack the frame
 	frame.pack();
 	

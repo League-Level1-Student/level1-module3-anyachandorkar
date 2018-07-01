@@ -39,19 +39,31 @@ showImage();
 	public void keyPressed(KeyEvent e) {
     	int keyCode = e.getKeyCode();
     	// 16. make a points variable to track the score. tell the user their score at the end.
+    	int points = 0;
     	//17. if the keyCode matches the imageIndex and "Simon says..."  increase their score
+    	if(imageIndex==keyCode && simonSays==0) {
+    		points+=1;
+    		speak("You were correct");
+    	}
+    	
+    	if(imageIndex==keyCode && simonSays==1) {
+    		points+=1;
+    		speak("You were correct");
+    	}
     	//18.   if the keyCode doesn't match the imageIndex and "Simon didn't say..."  increase their score	
     	//19. Use the speak method to tell the user if they were correct or not
     	//13. increment tries by 1
-  	
+  	tries = tries + 1;
     	//14. if tries is greater than 9 (or however many you want)
+    	if(tries>9) {
     	
+    	}
     	//15.    	exit the program
 
     	//11. dispose of the frame
-   	
+   	frame.dispose();
     	//12. call the method to show an image
-
+showImage();
 	}
 	private void showImage() {
     	//5. initialize your frame to a new JFrame()
@@ -67,9 +79,17 @@ showImage();
     	// 8. set the size of the frame 
      	frame.setSize(100, 100);
     	// 9. add a key listener to the frame
-	
+	frame.addKeyListener(this);
    	 //10. Use the speak method to either say "Simon says press this key" or "Press this key"
     	//Hint: use the simonSays int and a random number
+Random numb = new Random();
+simonSays = numb.nextInt(2);
+if (simonSays == 0) {
+	speak("Simon says press this button");
+}
+else {
+	speak("Press this button");
+}
 	}
 	private Component getNextRandomImage() {
     	this.imageIndex = new Random().nextInt(4) + 37;
