@@ -10,6 +10,7 @@ import java.io.IOException;
 import javax.swing.JApplet;
 
 public class CowTimer {
+
 	/*
 	 * This is an advanced recipe. There may be more than one line of code for
 	 * each instruction.
@@ -18,6 +19,18 @@ public class CowTimer {
 
 	public static void main(String[] args) throws InterruptedException {
 		/* 1. Make a CowTimer, set the time and start it. */
+		
+CowTimer time = new CowTimer();
+time.setTime(5);
+time.start();
+for (int i = 5; i < 5; i--) {
+	System.out.println(i+ " minutes");
+	Thread.sleep(600);
+	if(i==0) {
+		time.playSound("moo.wav");
+	}
+}
+
 
 	}
 
@@ -33,6 +46,7 @@ public class CowTimer {
 		 * 2. Count down the minutes, print the current minute then sleep for 60
 		 * seconds using Thread.sleep(int milliseconds).
 		 */
+		
 
 		/*
 		 * 3. When the timer is finished, use the playSound method to play a moo

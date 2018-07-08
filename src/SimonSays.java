@@ -30,7 +30,10 @@ public class SimonSays extends KeyAdapter {
  	Date timeAtStart;
  	private  void makeAlbum() {
  // 2. add 4 images which match keyboard keys like this: images.put(new Integer(KeyEvent.VK_UP), "image.jpg");
-  	
+ 		images.put(new Integer(KeyEvent.VK_UP), "A.png");
+ 		images.put(new Integer(KeyEvent.VK_DOWN), "D.png");
+ 		images.put(new Integer(KeyEvent.VK_RIGHT), "F.png");
+ 		images.put(new Integer(KeyEvent.VK_LEFT), "S.png");
  // 3. Tell the user to "Press the matching key when 'Simon says' otherwise press a different key"
  JOptionPane.showMessageDialog(null, "Press the matching key when 'Simon says' otherwise press a different key");
  // 4. call the method to show an image
@@ -67,14 +70,12 @@ showImage();
 	}
 	private void showImage() {
     	//5. initialize your frame to a new JFrame()
-	 frame = this.frame;
+	 frame = new JFrame();
     	//6. set the frame to visible
 	frame.setVisible(true);
   	 //frame.add(getNextRandomImage()); //7. rename to the name of your frame
-    	frame.add(frame, "A.png");
-    	frame.add(frame, "D.png");
-    	frame.add(frame, "F.png");
-    	frame.add(frame, "S.png");
+    	frame.add(getNextRandomImage());
+
 
     	// 8. set the size of the frame 
      	frame.setSize(100, 100);
@@ -90,6 +91,7 @@ if (simonSays == 0) {
 else {
 	speak("Press this button");
 }
+frame.pack();
 	}
 	private Component getNextRandomImage() {
     	this.imageIndex = new Random().nextInt(4) + 37;
@@ -109,6 +111,7 @@ else {
    	}
 	public static void main(String[] args) throws Exception {
 	 new SimonSays().makeAlbum();
+	
 	}
 }
 
