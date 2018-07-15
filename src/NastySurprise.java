@@ -32,7 +32,7 @@ panel.add(button2);
 frame.add(panel);
 	frame.setVisible(true);
 	button1.addActionListener(this);
-
+button2.addActionListener(this);
 }
 
 private void showPictureFromTheInternet(String imageUrl) {
@@ -53,10 +53,10 @@ private void showPictureFromTheInternet(String imageUrl) {
 public void actionPerformed(ActionEvent e) {
 	// TODO Auto-generated method stub
 if(button1==e.getSource()) {
-	showPictureFromTheInternet("https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjixt3zzJDcAhVFXK0KHfurB3MQjRx6BAgBEAU&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DV08WRasGLG8&psig=AOvVaw0BRJtfg7x7tznCmgkSZDhH&ust=1531176982392161");
+	showPictureFromTheInternet("https://cdnimg.webstaurantstore.com/images/products/large/45799/1527572.jpg");
 }
 if(button2==e.getSource()) {
-	showPictureFromTheInternet("https://happyologist.co.uk/wp-content/uploads/happy.jpeg");
+	showPictureFromTheInternet("https://o.aolcdn.com/images/dims3/GLOB/crop/1200x600+0+16/resize/630x315!/format/jpg/quality/85/http%3A%2F%2Fimg.huffingtonpost.com%2Fasset%2F1200_630%2F590fd8391600002000c59ec1.png%3Fcache%3DUyEEblYI0O");
 }
 	
 }
