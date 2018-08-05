@@ -66,19 +66,19 @@ public void actionPerformed(ActionEvent e) {
 	
 	// TODO Auto-generated method stub
 	if(e.getSource()==button1) {
-		add(x,y);
+		JOptionPane.showMessageDialog(panel, add(x,y));
 	}
 	
 	if(e.getSource()==button2) {
-		subtract(x,y);
+		JOptionPane.showMessageDialog(panel, subtract(x,y));
 	}
 	
 	if(e.getSource()==button3) {
-		multiply(x,y);
+		JOptionPane.showMessageDialog(panel, multiply(x,y));
 	}
 	
 	if(e.getSource()==button4) {
-		divide(x,y);
-	}
+JOptionPane.showMessageDialog(panel, divide(x,y));	
+}
 }
 }
